@@ -401,4 +401,4 @@ FodyWeavers.xsd
 /premake5.exe
 
 # Ignore model .obj
-!assets/**/*.*
+!tt-engine/assets/**/*.*
