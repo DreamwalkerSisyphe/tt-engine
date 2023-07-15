@@ -12,5 +12,11 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameCamera.cpp" />
+    <ClCompile Include="src\ModelLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\ModelLoader.h" />
+    <ClInclude Include="include\GameCamera.h" />
   </ItemGroup>
 </Project>
