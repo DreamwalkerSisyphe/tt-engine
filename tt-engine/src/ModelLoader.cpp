@@ -1,8 +1,8 @@
-#include "include/ModelLoader.h"
+#include "ModelLoader.h"
 
 Neco::Neco()
 {
-    neco = LoadModel("assets/neco/neco.obj");
+    neco = LoadModel("assets/neco/neco.mtl");
     Texture2D albedo = LoadTexture("assets/neco/necoarctposefeettilt_None_BaseColor.png");
     Texture2D height = LoadTexture("assets/neco/necoarctposefeettilt_None_Height.png");
     Texture2D metallic = LoadTexture("assets/neco/necoarctposefeettilt_None_Metallic.png");
@@ -19,7 +19,7 @@ Neco::Neco()
 
 Neco::~Neco()
 {
-    delete &neco;
+    //delete &neco;
 }
 
 Model& Neco::GetNeco()

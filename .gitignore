@@ -399,3 +399,6 @@ FodyWeavers.xsd
 /premake5.lua
 /premake-2019.bat
 /premake5.exe
+
+# Ignore model .obj
+!assets/**/*.*

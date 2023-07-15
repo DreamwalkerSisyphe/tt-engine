@@ -1,4 +1,4 @@
-#include "include/GameCamera.h"
+#include "GameCamera.h"
 #include "raymath.h"
 
 

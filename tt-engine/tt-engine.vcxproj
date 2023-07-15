@@ -181,8 +181,8 @@
     <ClCompile Include="src\ModelLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\GameCamera.h" />
-    <ClInclude Include="include\ModelLoader.h" />
+    <ClInclude Include="src\GameCamera.h" />
+    <ClInclude Include="src\ModelLoader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

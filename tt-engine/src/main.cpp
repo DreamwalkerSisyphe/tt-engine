@@ -1,8 +1,8 @@
 #include "raylib.h"
 #include "raymath.h"
 
-#include "include/GameCamera.h"
-#include "include/ModelLoader.h"
+#include "GameCamera.h"
+#include "ModelLoader.h"
 
 int main(int argc, char* argv[]) {
 	InitWindow(800, 600, "tt-engine");
