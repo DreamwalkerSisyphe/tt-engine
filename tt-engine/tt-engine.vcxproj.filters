@@ -16,10 +16,8 @@
     <ClInclude Include="src\ECS\EntityManager.h" />
     <ClInclude Include="src\GameCamera.h" />
     <ClInclude Include="src\ModelLoader.h" />
-    <ClInclude Include="src\ECS\Systems\RotatorTest.h" />
     <ClInclude Include="src\ECS\Systems\System.h" />
     <ClInclude Include="src\ECS\SystemManager.h" />
-    <ClInclude Include="src\ECS\Components\Transform.h" />
     <ClInclude Include="src\ECS\Components\Renderable.h" />
     <ClInclude Include="src\ECS\Systems\RenderSystem.h" />
   </ItemGroup>
@@ -30,7 +28,6 @@
     <ClCompile Include="src\GameCamera.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ModelLoader.cpp" />
-    <ClCompile Include="src\ECS\Systems\RotatorTest.cpp" />
     <ClCompile Include="src\ECS\SystemManager.cpp" />
     <ClCompile Include="src\ECS\Systems\RenderSystem.cpp" />
   </ItemGroup>

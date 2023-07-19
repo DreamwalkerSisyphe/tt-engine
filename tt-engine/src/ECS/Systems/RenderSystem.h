@@ -6,7 +6,6 @@
 #include "../EntityFactory.h"
 #include "raylib.h"
 #include "raymath.h"
-#include "../Components/Transform.h"
 #include "../Components/Renderable.h"
 
 
