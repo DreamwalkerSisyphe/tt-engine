@@ -176,13 +176,30 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ECS\ComponentArray.h" />
+    <ClInclude Include="src\ECS\ComponentManager.h" />
+    <ClInclude Include="src\ECS\Components\Renderable.h" />
+    <ClInclude Include="src\ECS\EntityFactory.h" />
+    <ClInclude Include="src\ECS\EntityManager.h" />
+    <ClInclude Include="src\ECS\Systems\RenderSystem.h" />
+    <ClInclude Include="src\GameCamera.h" />
+    <ClInclude Include="src\ModelLoader.h" />
+    <ClInclude Include="src\ECS\Systems\RotatorTest.h" />
+    <ClInclude Include="src\ECS\Systems\System.h" />
+    <ClInclude Include="src\ECS\SystemManager.h" />
+    <ClInclude Include="src\ECS\Components\Transform.h" />
+    <ClInclude Include="src\ECS\Types.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ECS\ComponentManager.cpp" />
+    <ClCompile Include="src\ECS\EntityFactory.cpp" />
+    <ClCompile Include="src\ECS\EntityManager.cpp" />
+    <ClCompile Include="src\ECS\Systems\RenderSystem.cpp" />
     <ClCompile Include="src\GameCamera.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ModelLoader.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\GameCamera.h" />
-    <ClInclude Include="src\ModelLoader.h" />
+    <ClCompile Include="src\ECS\Systems\RotatorTest.cpp" />
+    <ClCompile Include="src\ECS\SystemManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
