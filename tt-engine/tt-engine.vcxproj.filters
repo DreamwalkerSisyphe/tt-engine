@@ -18,8 +18,9 @@
     <ClInclude Include="src\ModelLoader.h" />
     <ClInclude Include="src\ECS\Systems\System.h" />
     <ClInclude Include="src\ECS\SystemManager.h" />
-    <ClInclude Include="src\ECS\Components\Renderable.h" />
+    <ClInclude Include="src\ECS\Components\CRenderable.h" />
     <ClInclude Include="src\ECS\Systems\RenderSystem.h" />
+    <ClInclude Include="src\ECS\Components\CTransform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ECS\ComponentManager.cpp" />

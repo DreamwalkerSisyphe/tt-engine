@@ -11,11 +11,11 @@ namespace TTEngine {
 
 	class ComponentManager {
 	private:
-		std::unordered_map<const char*, ComponentType> mComponentTypes{};
-		std::unordered_map<const char*, std::shared_ptr<IComponentArray>> mComponentArrays{};
-		ComponentType mNextComponentType{};
+		std::unordered_map<const char*, ComponentType> mComponentTypes{};								//Hashmap from string pointer to component type
+		std::unordered_map<const char*, std::shared_ptr<IComponentArray>> mComponentArrays{};			//Hashmap from string pointer to component array
+		ComponentType mNextComponentType{};																//Component type to assign to the next registered component
 
-		/// Get static casted pointer to T ComponentArray
+		///Get static casted pointer to T ComponentArray
 		template<typename T>
 		std::shared_ptr<ComponentArray<T>> GetComponentArray() {
 			const char* typeName = typeid(T).name();
@@ -26,7 +26,7 @@ namespace TTEngine {
 		}
 
 	public:
-		/// Register a T component to the ComponentArray
+		///Register a T component to the ComponentArray
 		template<typename T>
 		void RegisterComponent() {
 			const char* typeName = typeid(T).name();
@@ -38,7 +38,7 @@ namespace TTEngine {
 			mNextComponentType++;
 		}
 
-		/// Try to get a base T component type
+		///Try to get a T component type
 		template<typename T>
 		ComponentType GetComponentType() {
 			const char* typeName = typeid(T).name();
@@ -48,25 +48,25 @@ namespace TTEngine {
 			return mComponentTypes[typeName];
 		}
 		
-		/// Add component to an entity
+		///Add component to an entity
 		template<typename T>
 		void AddComponent(Entity entity, T component) {
 			GetComponentArray<T>()->InsertData(entity, component);
 		}
 
-		/// Remove component from an entity
+		///Remove component from an entity
 		template<typename T>
 		void RemoveComponent(Entity entity) {
 			GetComponentArray<T>()->RemoveData(entity);
 		}
 
-		/// Try to get a T component from an entity
+		///Try to get a T component from an entity
 		template<typename T>
 		T& GetComponent(Entity entity) {
 			return GetComponentArray<T>()->GetData(entity);
 		}
 
-		/// Component cleanup
+		/// Notifies component arrays for cleanup when an entity is destroyed
 		void EntityDestroyed(Entity entity);
 	};
 

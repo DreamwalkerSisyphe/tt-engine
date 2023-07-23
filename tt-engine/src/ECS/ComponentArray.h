@@ -16,17 +16,17 @@ namespace TTEngine {
 		virtual void EntityDestroyed(Entity entity) = 0;
 	};
 
-	/// Tightly packed mapping of all components
+	// Tightly packed mapping of all components
 	template<typename T>
 	class ComponentArray : public IComponentArray {
 	private:
-		std::array<T, MAX_ENTITIES> mComponentArray;
-		std::unordered_map<Entity, size_t> mEntityToIndexMap;
-		std::unordered_map<size_t, Entity> mIndexToEntityMap;
-		size_t mSize;
+		std::array<T, MAX_ENTITIES> mComponentArray;				//Array of generic components
+		std::unordered_map<Entity, size_t> mEntityToIndexMap;		//Hashmap from entity to index
+		std::unordered_map<size_t, Entity> mIndexToEntityMap;		//Hashmap from index to entity
+		size_t mSize;												//Size of valid array entries
 
 	public:
-		/// Add a T component to an entity
+		/// Add a T component to an entity and update the maps
 		void InsertData(Entity entity, T component) {
 			assert(mEntityToIndexMap.find(entity) == mEntityToIndexMap.end() && "Tried to add component to the same entity more than once.");
 
@@ -37,7 +37,7 @@ namespace TTEngine {
 			mSize++;
 		}
 
-		/// Remove a T component from an entity
+		/// Remove a T component from an entity and update the maps
 		void RemoveData(Entity entity) {
 			assert(mEntityToIndexMap.find(entity) != mEntityToIndexMap.end() && "Tried to remove a component that doesn't exist.");
 
@@ -46,13 +46,13 @@ namespace TTEngine {
 			mComponentArray[indexOfRemovedEntity] = mComponentArray[indexOfLastElement];
 
 			Entity entityOfLastElement = mIndexToEntityMap[indexOfLastElement];
-			mEntityToIndexMap[entityOfLastElement] = indexOfLastElement;
+			mEntityToIndexMap[entityOfLastElement] = indexOfRemovedEntity;
 			mIndexToEntityMap[indexOfRemovedEntity] = entityOfLastElement;
 
 			mEntityToIndexMap.erase(entity);
 			mIndexToEntityMap.erase(indexOfLastElement);
 
-			mSize++;
+			mSize--;
 		}
 
 		/// Get T component from an entity

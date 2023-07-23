@@ -6,7 +6,8 @@
 #include "../EntityFactory.h"
 #include "raylib.h"
 #include "raymath.h"
-#include "../Components/Renderable.h"
+#include "../Components/CRenderable.h"
+#include "../Components/CTransform.h"
 
 
 namespace TTEngine {

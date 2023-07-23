@@ -178,7 +178,8 @@
   <ItemGroup>
     <ClInclude Include="src\ECS\ComponentArray.h" />
     <ClInclude Include="src\ECS\ComponentManager.h" />
-    <ClInclude Include="src\ECS\Components\Renderable.h" />
+    <ClInclude Include="src\ECS\Components\CRenderable.h" />
+    <ClInclude Include="src\ECS\Components\CTransform.h" />
     <ClInclude Include="src\ECS\EntityFactory.h" />
     <ClInclude Include="src\ECS\EntityManager.h" />
     <ClInclude Include="src\ECS\Systems\RenderSystem.h" />

@@ -14,5 +14,7 @@ using namespace TTEngine;
 
 	void EntityFactory::DestroyEntity(Entity entity) {
 		mEntityManager->DestroyEntity(entity);
+		mComponentManager->EntityDestroyed(entity);
+		mSystemManager->EntityDestroyed(entity);
 	}
 
