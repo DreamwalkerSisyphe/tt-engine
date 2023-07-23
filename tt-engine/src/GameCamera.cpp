@@ -40,8 +40,8 @@ void GameCamera::HandleRotation(Camera3D &camera)
         newPos = GetMousePosition();
 
         // update angles with the difference between cursor positions
-        rotAngle    += (newPos.x - cursorPos.x) * rotSpeed;
-        tiltAngle   += (newPos.y - cursorPos.y) * rotSpeed;
+        rotAngle    += (newPos.x - cursorPos.x) * rotSpeed * GetFrameTime();
+        tiltAngle   += (newPos.y - cursorPos.y) * rotSpeed * GetFrameTime();
 
         // clamp tilt so we don't flip
         if (tiltAngle > 89)
@@ -78,8 +78,8 @@ void GameCamera::HandleRotation(Camera3D &camera)
     // update offset from target point
     cameraOffset = { 0, 0, camDist };
 
-    Matrix tiltMat  = MatrixRotateX(tiltAngle * GetFrameTime());    // tilt rotation
-    Matrix rotMat   = MatrixRotateY(rotAngle * GetFrameTime());     // plane rotation
+    Matrix tiltMat  = MatrixRotateX(tiltAngle);    // tilt rotation
+    Matrix rotMat   = MatrixRotateY(rotAngle);     // plane rotation
     Matrix mat      = MatrixMultiply(tiltMat, rotMat);              // believe it or not, both rotations
 
     cameraOffset    = Vector3Transform(cameraOffset, mat);          // from camera position to world space vector
